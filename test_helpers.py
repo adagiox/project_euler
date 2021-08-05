@@ -34,3 +34,8 @@ def test_is_palindrome():
     assert is_palindrome(909) == True
     assert is_palindrome(123) == False
     assert is_palindrome(223) == False
+
+
+def test_is_pythagorean_triplet():
+    assert is_pythagorean_triplet(3, 4, 5) == True
+    assert is_pythagorean_triplet(4, 4, 4) == False

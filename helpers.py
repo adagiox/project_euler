@@ -27,3 +27,7 @@ def prime_factors(num: int) -> list[int]:
 
 def is_palindrome(num: int) -> bool:
     return list(str(num)) == list(str(num))[::-1]
+
+
+def is_pythagorean_triplet(a: int, b: int, c: int) -> bool:
+    return a < b < c and (a*a + b*b) == c*c
