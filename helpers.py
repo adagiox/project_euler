@@ -1,3 +1,7 @@
+from math import sqrt
+from typing import Iterator
+
+
 def is_multiple(num: int, multiple: int) -> bool:
     if multiple == 0:
         return False
@@ -11,6 +15,15 @@ def is_prime(num: int) -> bool:
         if num % i == 0:
             return False
     return True
+
+
+def factors(num: int) -> list[int]:
+    factor_set = {}
+    for divisor in range(1, int(sqrt(num)) + 1):
+        if num % divisor == 0:
+            factor_set[divisor] = 1
+            factor_set[num // divisor] = 1
+    return list(factor_set.keys())
 
 
 def prime_factors(num: int) -> list[int]:
@@ -31,3 +44,18 @@ def is_palindrome(num: int) -> bool:
 
 def is_pythagorean_triplet(a: int, b: int, c: int) -> bool:
     return a < b < c and (a*a + b*b) == c*c
+
+
+def next_collatz(num: int) -> Iterator[int]:
+    yield num
+    while num > 1:
+        if num % 2 == 0:
+            num //= 2
+        else:
+            num = 3*num + 1
+        yield num
+
+
+def collatz_sequence(num: int) -> list[int]:
+    return [n for n in next_collatz(num)]
+

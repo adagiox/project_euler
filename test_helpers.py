@@ -39,3 +39,7 @@ def test_is_palindrome():
 def test_is_pythagorean_triplet():
     assert is_pythagorean_triplet(3, 4, 5) == True
     assert is_pythagorean_triplet(4, 4, 4) == False
+
+
+def test_collatz_squence():
+    assert collatz_sequence(13) == [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
